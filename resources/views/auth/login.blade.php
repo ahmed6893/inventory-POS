@@ -38,7 +38,7 @@
                 </a>
             @endif
 
-            <x-primary-button class="ms-3">
+            <x-primary-button class="ms-3" style="border-radius: 16px;">
                 {{ __('Log in') }}
             </x-primary-button>
         </div>

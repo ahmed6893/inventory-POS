@@ -77,6 +77,15 @@
                                                 <h6 class="mb-0 fs-14 fw-semibold">{{$emploe->name}}</h6>
                                             </td>
                                             <td>
+                                                <h6 class="mb-0 fs-14 fw-semibold">{{$emploe->phone}}</h6>
+                                            </td>
+                                            <td>
+                                                <h6 class="mb-0 fs-14 fw-semibold">{{$emploe->address}}</h6>
+                                            </td>
+                                            <td>
+                                                <h6 class="mb-0 fs-14 fw-semibold">{{$emploe->salary}}</h6>
+                                            </td>
+                                            <td>
                                                 @if($emploe->status == 1)
                                                     <span class="mb-0 mt-1 badge rounded-pill text-success bg-success-transparent">Active</span>
                                                 @else

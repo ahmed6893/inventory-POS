@@ -51,55 +51,31 @@
                                         <input type="text" name="name" id="name" class="form-control" placeholder="Enter product name">
                                     </div>
                                     <div class="col-md-6">
-                                        <label for="code" class="form-label fw-semibold text-dark">Product Code</label>
-                                        <input type="text" name="code" id="code" class="form-control" placeholder="Enter product code">
+                                        <label for="code" class="form-label fw-semibold text-dark">Employee phone</label>
+                                        <input type="text" name="phone" id="phone" class="form-control" placeholder="Enter employee phone">
                                     </div>
                                 </div>
 
 
                                 <div class="row mb-4">
                                     <div class="col-md-6">
-                                        <label class="form-label text-muted">Meta Title:</label>
-                                        <textarea  name="meta_title" type="text" class="form-control text-dark" placeholder="Enter Meta Title"></textarea>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <label class="form-label text-muted">Meta Description:</label>
-                                        <textarea  name="meta_description" type="text" class="form-control text-dark" placeholder="Enter Meta Description"></textarea>
+                                        <label class="form-label text-muted">Address</label>
+                                        <textarea  name="address" type="text" class="form-control text-dark" placeholder="Enter Address"></textarea>
                                     </div>
                                 </div>
 
 
                                 <div class="row mb-4">
-                                    <label class="form-label text-muted">Product Price:</label>
+                                    <label class="form-label text-muted">Employee Salary:</label>
                                     <div class="input-group">
-                                        <input  name="regular_price" type="number" class="form-control text-dark" placeholder="Enter Product Regular Price">
-                                        <input  name="selling_price" type="number" class="form-control text-dark" placeholder="Enter Product Selling Price">
-                                    </div>
-                                </div>
-                                <div class="row mb-4">
-                                    <div class="col-md-6">
-                                        <label class="form-label text-muted">Stock Amount:</label>
-                                        <input name="stock_amount" type="text" class="form-control text-dark" placeholder="Enter Stock Amount">
+                                        <input  name="salary" type="number" class="form-control text-dark" placeholder="Enter Employee Salary">
                                     </div>
                                 </div>
 
-                                <div class="row mb-4">
-                                    <div class="col-md-6">
-                                        <label class="form-label text-muted">Short Description:</label>
-                                        <textarea  name="short_description" type="text" class="form-control text-dark" placeholder="Enter Short Description"></textarea>
-                                    </div>
-                                </div>
-
-                                <div class="row mb-4">
-                                    <div class="col-md-12">
-                                        <label class="form-label text-muted">Long Description:</label>
-                                        <textarea  name="long_description" type="text" class="form-control text-dark Summernote" id="summernote" placeholder="Enter Long Description"></textarea>
-                                    </div>
-                                </div>
                                         <div class="row mb-4">
                                             <div class="col-md-6">
-                                                <label for="category-status" class="form-label text-muted">Status:</label>
-                                                <select name="status" id="category-status" class="form-control">
+                                                <label for="employee-status" class="form-label text-muted">Status:</label>
+                                                <select name="status" id="employee-status" class="form-control">
                                                     <option value="1" {{ old('status') == 1 ? 'selected' : '' }}>Active</option>
                                                     <option value="0" {{ old('status') == 0 ? 'selected' : '' }}>Inactive</option>
                                                 </select>

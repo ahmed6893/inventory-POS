@@ -10,15 +10,28 @@
         <!-- Fonts -->
         <link rel="preconnect" href="https://fonts.bunny.net">
         <link href="https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap" rel="stylesheet" />
-
+        <link href="{{asset('/')}}admin/assets/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+        <link href="{{asset('/')}}admin/assets/css/style.css" rel="stylesheet" />
+        <link href="{{asset('/')}}admin/assets/css/skin-modes.css" rel="stylesheet" />
+        <link href="{{asset('/')}}admin/assets/plugins/icons/icons.css" rel="stylesheet" />
         <!-- Scripts -->
         @vite(['resources/css/app.css', 'resources/js/app.js'])
+        <style>
+            body {
+                background-color: #df8e04;
+            }
+            .login-center {
+                min-height: 100vh;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+        </style>
     </head>
-    <body class="font-sans text-gray-900 antialiased" style="background-color: #df8e04;">
-        <div class="min-h-screen flex flex-col sm:justify-center items-center pt-6 sm:pt-0 bg-gray-100">
-              <h1 class="text-3xl font-bold mb-6">Inventory</h1>
-
-            <div class="w-full sm:max-w-md mt-6 px-6 py-4 bg-white shadow-md overflow-hidden sm:rounded-lg">
+    <body class="font-sans text-gray-900 antialiased">
+        <div class="login-center">
+            <div class="w-full sm:max-w-md px-6 py-4 bg-white shadow-md overflow-hidden sm:rounded-lg" style="border-radius: 16px;">
+                <h1 class="text-center mb-4" style="font-weight: bold; color: #df8e04;">Inventory</h1>
                 {{ $slot }}
             </div>
         </div>

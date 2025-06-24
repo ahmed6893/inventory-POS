@@ -35,8 +35,8 @@
                                     <span class="side-menu__label">Employee</span><i class="angle fa fa-angle-right"></i>
                                 </a>
                                 <ul class="slide-menu">
-                                    <li class="side-menu-label1"><a href="javascript:void(0)">All Employers</a></li>
-                                    <li class="side-menu-label1"><a href="javascript:void(0)">Create Employers</a></li>
+                                    <li class="side-menu-label1"><a href="{{ route('employer') }}">All Employers</a></li>
+                                    <li class="side-menu-label1"><a href="{{ route('employer.create') }}">Create Employers</a></li>
 
                                 </ul>
                             </li>
