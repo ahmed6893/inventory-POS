@@ -103,6 +103,9 @@
         <!-- SWITCHER JS -->
         <script src="{{asset('/')}}admin/assets/switcher/js/switcher.js"></script>
 
+{{-- <script src="{{ asset('/') }}admin/assets/plugins/bootstrap/js/bootstrap.bundle.min.js"></script> --}}
+{{-- <script src="{{ asset('/') }}admin/assets/js/scripts.js"></script> --}}
+
     </body>
 
 

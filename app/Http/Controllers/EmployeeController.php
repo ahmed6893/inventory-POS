@@ -15,11 +15,12 @@ class EmployeeController extends Controller
     {
         return view('admin.employe.create');
     }
-    public function edit()
+    public function edit($request, $id)
     {
-        return view('admin.employe.edit');
+        $employee = Employee::findOrFail($id);
+        return view('admin.employe.edit', compact('employee'));
     }
-    public function save($request)
+    public function store(Request $request)
     {
         $request->validate([
             'name' => 'required',
@@ -29,18 +30,39 @@ class EmployeeController extends Controller
             'experiance' => 'required',
             'employee_image' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
             'salary' => 'required|numeric',
-            'vacation' => 'required|numeric',
+            'vacation' => 'required',
             'status' => 'required|boolean'
         ]);
 
         Employee::saveNewEmployee($request);
         return back()->with('success', 'Employee created successfully!');
     }
+
+    public function show($id)
+    {
+        $employee = Employee::findOrFail($id);
+        return view('admin.employe.show', compact('employee'));
+    }
     public function update($request, $id)
     {
-    }
-    public function destroy()
-    {
+        $request->validate([
+            'name' => 'required',
+            'email' => 'required|email',
+            'phone' => 'required',
+            'address' => 'required',
+            'experiance' => 'required',
+            'employee_image' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'salary' => 'required|numeric',
+            'vacation' => 'required',
+            'status' => 'required|boolean'
+        ]);
 
+        Employee::updateEmployee($request, $id);
+        return back()->with('success', 'Employee updated successfully!');
+    }
+    public function destroy($id)
+    {
+        Employee::deleteEmployee($id);
+        return back()->with('success', 'Employee deleted successfully!');
     }
 }

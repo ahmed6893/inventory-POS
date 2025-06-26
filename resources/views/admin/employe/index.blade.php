@@ -31,7 +31,7 @@
                             <div class="card-body p-4">
                                 <div class="card-header border-bottom d-flex justify-content-between">
                                     <h3 class="card-title">All Employee Info</h3>
-                                    <a href="{{route('employe.create')}}" class="btn btn-primary">Add Employee</a>
+                                    <a href="{{route('employer.create')}}" class="btn btn-primary">Add Employee</a>
                                 </div>
                             </div>
                         </div>
@@ -67,7 +67,7 @@
                                         </tr>
                                         </thead>
                                         <tbody class="table-body">
-                                        @foreach($emploes as $emploe)
+                                        @foreach($employees as $emploe)
                                         <tr>
                                             <td class="text-muted fs-15 fw-semibold text-center">{{$loop->iteration}}</td>
                                             <td>
@@ -94,10 +94,13 @@
                                             </td>
                                             <td>
                                                 <div class="d-flex align-items-stretch">
-                                                    <a class="btn btn-sm btn-outline-success border me-2" href="{{route('employe.edit',$emploe->id)}}" data-bs-toggle="tooltip" data-bs-original-title="Edit">
+                                                    <a class="btn btn-sm btn-outline-success border me-2" href="{{route('employer.edit',$emploe->id)}}" data-bs-toggle="tooltip" data-bs-original-title="Edit">
                                                         <i class="fe fe-edit-2"></i>
                                                     </a>
-                                                    <form action="{{route('employee.destroy',$emploe->id)}}" method="POST">
+                                                    <a class="btn btn-sm btn-outline-success border me-2" href="{{route('employer.view',$emploe->id)}}" data-bs-toggle="tooltip" data-bs-original-title="View">
+                                                        <i class="fe fe-eye"></i>
+                                                    </a>
+                                                    <form action="{{route('employer.destroy',$emploe->id)}}" method="POST">
                                                         @method('DELETE')
                                                         @csrf
                                                         <button type="submit" class="btn btn-sm btn-outline-secondary border me-2" data-bs-toggle="tooltip" data-bs-original-title="Delete" onclick="return confirm("Are You Sure ..")">
