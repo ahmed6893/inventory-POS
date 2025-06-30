@@ -12,7 +12,7 @@ class CustomerController extends Controller
      */
     public function index()
     {
-        //
+        return view('admin.customer.index', ['customers' => Customer::all()]);
     }
 
     /**
@@ -20,7 +20,7 @@ class CustomerController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.customer.create');
     }
 
     /**
@@ -28,7 +28,22 @@ class CustomerController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'name' => 'required|string|max:255',
+            'email' => 'nullable|email|max:255',
+            'phone' => 'required|string|max:20',
+            'address' => 'nullable|string|max:255',
+            'shop_name' => 'nullable|string|max:255',
+            'customer_image' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'account_holder' => 'nullable|string|max:255',
+            'account_number' => 'nullable|string|max:50',
+            'bank_name' => 'nullable|string|max:255',
+            'bank_branch' => 'nullable|string|max:255',
+        ]);
+
+        $customer = new Customer();
+        $customer->saveCustomer($request);
+        return back()->with('success', 'Customer created successfully');
     }
 
     /**
@@ -44,7 +59,7 @@ class CustomerController extends Controller
      */
     public function edit(Customer $customer)
     {
-        //
+        return view('admin.customer.edit', compact('customer'));
     }
 
     /**
@@ -52,7 +67,21 @@ class CustomerController extends Controller
      */
     public function update(Request $request, Customer $customer)
     {
-        //
+        $request->validate([
+            'name' => 'required|string|max:255',
+            'email' => 'nullable|email|max:255',
+            'phone' => 'required|string|max:20',
+            'address' => 'nullable|string|max:255',
+            'shop_name' => 'nullable|string|max:255',
+            'customer_image' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'account_holder' => 'nullable|string|max:255',
+            'account_number' => 'nullable|string|max:50',
+            'bank_name' => 'nullable|string|max:255',
+            'bank_branch' => 'nullable|string|max:255',
+        ]);
+
+        $customer->updateCustomer($request, $customer->id);
+        return back()->with('success', 'Customer updated successfully');
     }
 
     /**
@@ -60,6 +89,7 @@ class CustomerController extends Controller
      */
     public function destroy(Customer $customer)
     {
-        //
+        Customer::deleteCustomer($customer->id);
+        return back()->with('success', 'Customer deleted successfully');
     }
 }
