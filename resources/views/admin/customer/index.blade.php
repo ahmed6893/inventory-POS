@@ -61,7 +61,7 @@
                                             <th class="bg-transparent border-bottom-0">Customer Name</th>
                                             <th class="bg-transparent border-bottom-0">Customer Phone</th>
                                             <th class="bg-transparent border-bottom-0">Customer Email</th>
-                                            <th class="bg-transparent border-bottom-0">Customer </th>
+                                            <th class="bg-transparent border-bottom-0">Customer Bank Name</th>
                                             <th class="bg-transparent border-bottom-0">Address</th>
                                             <th class="bg-transparent border-bottom-0 no-btn">Action</th>
                                         </tr>
@@ -80,6 +80,12 @@
                                                 <h6 class="mb-0 fs-14 fw-semibold">{{$customer->phone}}</h6>
                                             </td>
                                             <td>
+                                                <h6 class="mb-0 fs-14 fw-semibold">{{$customer->email}}</h6>
+                                            </td>
+                                            <td>
+                                                <h6 class="mb-0 fs-14 fw-semibold">{{$customer->bank_name}}</h6>
+                                            </td>
+                                            <td>
                                                 <h6 class="mb-0 fs-14 fw-semibold">{{$customer->address}}</h6>
                                             </td>
                                             <td>
@@ -87,11 +93,10 @@
                                                     <a class="btn btn-sm btn-outline-success border me-2" href="{{route('customer.edit',$customer->id)}}" data-bs-toggle="tooltip" data-bs-original-title="Edit">
                                                         <i class="fe fe-edit-2"></i>
                                                     </a>
-                                                    <a class="btn btn-sm btn-outline-success border me-2" href="{{route('customer.view',$customer->id)}}" data-bs-toggle="tooltip" data-bs-original-title="View">
+                                                    {{-- <a class="btn btn-sm btn-outline-success border me-2" href="{{route('customer.view',$customer->id)}}" data-bs-toggle="tooltip" data-bs-original-title="View">
                                                         <i class="fe fe-eye"></i>
-                                                    </a>
+                                                    </a> --}}
                                                     <form action="{{route('customer.destroy',$customer->id)}}" method="POST">
-                                                        @method('DELETE')
                                                         @csrf
                                                         <button type="submit" class="btn btn-sm btn-outline-secondary border me-2" data-bs-toggle="tooltip" data-bs-original-title="Delete" onclick="return confirm('Are You Sure ..')">
                                                             <i class="fe fe-trash-2"></i>

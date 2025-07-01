@@ -27,7 +27,7 @@ Route::middleware('auth')->group(function () {
     Route::get('/create-customer',      [CustomerController::class, 'create']) ->name('customer.create');
     Route::get('/customer/edit/{id}',   [CustomerController::class, 'edit'])   ->name('customer.edit');
     Route::post('/customer/update/{id}',[CustomerController::class, 'update']) ->name('customer.update');
-    Route::get('/customer/delete/{id}', [CustomerController::class, 'destroy'])->name('customer.destroy');
+    Route::post('/customer/delete/{id}', [CustomerController::class, 'destroy'])->name('customer.destroy');
 });
 
 require __DIR__.'/auth.php';
