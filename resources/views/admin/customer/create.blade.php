@@ -70,11 +70,11 @@
                                 <div class="row mb-4">
                                     <div class="col-md-6">
                                         <label for="code" class="form-label fw-semibold text-dark">Account Holder</label>
-                                        <input type="text" name="code" class="form-control" placeholder="Account holder">
+                                        <input type="text" name="account_holder" class="form-control" placeholder="Account holder">
                                     </div>
                                     <div class="col-md-6">
                                         <label for="code" class="form-label fw-semibold text-dark">Account No</label>
-                                        <input type="text" name="type" class="form-control" placeholder="Account Number">
+                                        <input type="text" name="account_number" class="form-control" placeholder="Account Number">
                                     </div>
                                 </div>
                                 <div class="row mb-4">
