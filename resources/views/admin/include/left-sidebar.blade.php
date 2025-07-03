@@ -49,6 +49,26 @@
                                     <li><a href="{{ route('customer.index') }}" class="slide-item">Customer</a></li>
                                 </ul>
                             </li>
+                            <li class="slide">
+                                <a class="side-menu__item" data-bs-toggle="slide" href="#">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="side-menu__icon" viewBox="0 0 24 24"><path d="..."/></svg>
+                                    <span class="side-menu__label">Supplier Module</span><i class="angle fa fa-angle-right"></i>
+                                </a>
+
+                                <ul class="slide-menu">
+                                    <li><a href="{{ route('supplier.index') }}" class="slide-item">All Supplier</a></li>
+                                </ul>
+                            </li>
+                            <li class="slide">
+                                <a class="side-menu__item" data-bs-toggle="slide" href="#">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="side-menu__icon" viewBox="0 0 24 24"><path d="..."/></svg>
+                                    <span class="side-menu__label">Salary Module</span><i class="angle fa fa-angle-right"></i>
+                                </a>
+
+                                <ul class="slide-menu">
+                                    <li><a href="{{ route('salary.index') }}" class="slide-item">All Employer Salary</a></li>
+                                </ul>
+                            </li>
                         </ul>
                         <div class="slide-right" id="slide-right"><svg xmlns="http://www.w3.org/2000/svg" fill="#7b8191"
                                 width="24" height="24" viewBox="0 0 24 24">

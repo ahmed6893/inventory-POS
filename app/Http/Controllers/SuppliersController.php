@@ -39,7 +39,6 @@ class SuppliersController extends Controller
             'account_number' => 'nullable|string|max:255',
             'bank_name' => 'nullable|string|max:255',
             'bank_branch' => 'nullable|string|max:255',
-            'city' => 'nullable|string|max:255',
             'suppliers_image' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
             'status' => 'required|boolean'
         ]);

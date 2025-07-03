@@ -11,13 +11,13 @@
                 <!-- PAGE-HEADER -->
                 <div class="page-header">
                     <div>
-                        <h1 class="page-title">Edit Customer</h1>
+                        <h1 class="page-title">Edit Supplier</h1>
                     </div>
                     <div class="ms-auto pageheader-btn">
                         <ol class="breadcrumb">
                             <li class="breadcrumb-item">Apps</li>
-                            <li class="breadcrumb-item"><a href="javascript:void(0);">Customer</a></li>
-                            <li class="breadcrumb-item active" aria-current="page">Edit Customer</li>
+                            <li class="breadcrumb-item"><a href="javascript:void(0);">Supplier</a></li>
+                            <li class="breadcrumb-item active" aria-current="page">Edit Supplier</li>
                         </ol>
                     </div>
                 </div>
@@ -45,47 +45,47 @@
                             <div class="card-body p-5 create-project-main">
 
                                 <div class="d-flex align-items-center justify-content-between mb-4">
-                                    <h4 class="m-0">All Customer</h4>
-                                    <a href="{{ route('customer.index') }}" class="btn btn-sm btn-outline-secondary">
+                                    <h4 class="m-0">All Supplier</h4>
+                                    <a href="{{ route('supplier.index') }}" class="btn btn-sm btn-outline-secondary">
                                          Back to List
                                     </a>
                                 </div>
-                                <form action="{{route('customer.update', $customer->id)}}" method="POST" enctype="multipart/form-data">
+                                <form action="{{route('supplier.update', $supplier->id)}}" method="POST" enctype="multipart/form-data">
                                     @csrf
                                     @method('PUT')
                                 <div class="row g-3 mb-4">
                                     <div class="col-md-6">
-                                        <label for="name" class="form-label fw-semibold text-dark">Customer Name</label>
-                                        <input type="text" name="name" class="form-control" placeholder="Customer name" value="{{ $customer->name }}">
+                                        <label for="name" class="form-label fw-semibold text-dark">Supplier Name</label>
+                                        <input type="text" name="name" class="form-control" placeholder="Supplier name" value="{{ $supplier->name }}">
                                     </div>
                                     <div class="col-md-6">
-                                        <label for="code" class="form-label fw-semibold text-dark">Customer phone</label>
-                                        <input type="text" name="phone" class="form-control" placeholder="Customer phone" value="{{ $customer->phone }}">
+                                        <label for="code" class="form-label fw-semibold text-dark">Supplier phone</label>
+                                        <input type="text" name="phone" class="form-control" placeholder="Supplier phone" value="{{ $supplier->phone }}">
                                     </div>
                                     <div class="col-md-6">
-                                        <label for="code" class="form-label fw-semibold text-dark">Customer Email</label>
-                                        <input type="email" name="email" class="form-control" placeholder="Customer email" value="{{ $customer->email }}">
+                                        <label for="code" class="form-label fw-semibold text-dark">Supplier Email</label>
+                                        <input type="email" name="email" class="form-control" placeholder="Supplier email" value="{{ $supplier->email }}">
                                     </div>
                                 </div>
 
                                 <div class="row mb-4">
                                     <div class="col-md-6">
                                         <label for="code" class="form-label fw-semibold text-dark">Account Holder</label>
-                                        <input type="text" name="code" class="form-control" placeholder="Account holder" value="{{ $customer->account_holder }}">
+                                        <input type="text" name="account_holder" class="form-control" placeholder="Account holder" value="{{ $supplier->account_holder }}">
                                     </div>
                                     <div class="col-md-6">
                                         <label for="code" class="form-label fw-semibold text-dark">Account No</label>
-                                        <input type="text" name="type" class="form-control" placeholder="Account Number" value="{{ $customer->account_number }}">
+                                        <input type="text" name="account_number" class="form-control" placeholder="Account Number" value="{{ $supplier->account_number }}">
                                     </div>
                                 </div>
                                 <div class="row mb-4">
                                     <div class="col-md-6">
                                         <label for="code" class="form-label fw-semibold text-dark">Bank Name</label>
-                                        <input type="text" name="bank_name" class="form-control" placeholder="Bank Name" value="{{ $customer->bank_name }}">
+                                        <input type="text" name="bank_name" class="form-control" placeholder="Bank Name" value="{{ $supplier->bank_name }}">
                                     </div>
                                     <div class="col-md-6">
                                         <label for="code" class="form-label fw-semibold text-dark">Bank Branch</label>
-                                        <input type="text" name="bank_branch" class="form-control" placeholder="Bank Branch" value="{{ $customer->bank_branch }}">
+                                        <input type="text" name="bank_branch" class="form-control" placeholder="Bank Branch" value="{{ $supplier->bank_branch }}">
                                     </div>
                                 </div>
                                 <div class="row mb-4">
@@ -98,8 +98,8 @@
                                 <div class="row mb-4">
                                     <div class="col-md-6">
                                         <label class="form-label text-muted">Add Image:</label>
-                                        <input type="file" class="dropify" data-bs-height="100" name="customer_image" />
-                                            <img src="{{ asset($customer->customer_image) }}" alt="Customer Image" class="mt-2" width="100">
+                                        <input type="file" class="dropify" data-bs-height="100" name="supplier_image" />
+                                            <img src="{{ asset($supplier->supplier_image) }}" alt="Supplier Image" class="mt-2" width="100">
                                     </div>
                                 </div>
 
