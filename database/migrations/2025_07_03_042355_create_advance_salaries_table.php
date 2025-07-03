@@ -11,13 +11,12 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('salaries', function (Blueprint $table) {
+        Schema::create('advance_salaries', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('employee_id');
             $table->decimal('amount', 10, 2);
-            $table->string('month', 7);
-            $table->date('payment_date');
-            $table->string('payment_method');
+            $table->date('payment_date')->nullable();
+            $table->string('month');
             $table->string('status')->default('pending');
             $table->text('notes')->nullable();
             $table->timestamps();
@@ -31,6 +30,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('salaries');
+        Schema::dropIfExists('advance_salaries');
     }
 };
