@@ -34,7 +34,7 @@ class AdvanceSalaryController extends Controller
        $validatedData = $request->validate([
             'employee_id' => 'required|exists:employees,id',
             'amount' => 'required|numeric|min:0',
-            'month' => 'required|string|max:7', // e.g. '2025-07'
+            'month' => 'required|string|max:7',
             'payment_date' => 'required|date',
             'payment_method' => 'required|string|max:50',
             'status' => 'required|string|max:20',
