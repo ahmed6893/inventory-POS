@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Salary;
 use App\Models\Employee;
+use App\Models\AdvanceSalary;
 use Illuminate\Http\Request;
 
 class SalaryController extends Controller
@@ -34,14 +35,27 @@ class SalaryController extends Controller
         $validatedData = $request->validate([
             'employee_id' => 'required|exists:employees,id',
             'amount' => 'required|numeric|min:0',
+            'month' => 'required|string|max:7',
             'payment_date' => 'required|date',
             'payment_method' => 'required|string|max:50',
             'status' => 'required|boolean',
             'notes' => 'nullable|string|max:255',
         ]);
 
+        $advance = AdvanceSalary::where('employee_id', $validatedData['employee_id'])
+            ->where('month', $validatedData['month'])
+            ->sum('amount');
+
+            $net_salary = $validatedData['amount'] - $advance;
+        $validatedData['net_salary'] = $net_salary;
+
         Salary::create($validatedData);
-        return back()->with('success', 'Salary created successfully!');
+        if ($advance > 0) {
+            $msg = 'Salary created successfully! (Advance adjusted)';
+        } else {
+            $msg = 'Salary created successfully!';
+        }
+        return back()->with('success', $msg);
     }
 
     /**
@@ -57,7 +71,8 @@ class SalaryController extends Controller
      */
     public function edit(Salary $salary)
     {
-        return view('admin.salary.edit', compact('salary'));
+    $employees = Employee::all();
+    return view('admin.salary.edit', compact('salary', 'employees'));
     }
 
     /**
@@ -68,6 +83,7 @@ class SalaryController extends Controller
         $validatedData = $request->validate([
             'employee_id' => 'required|exists:employees,id',
             'amount' => 'required|numeric|min:0',
+            'month' => 'required|string|max:7',
             'payment_date' => 'required|date',
             'payment_method' => 'required|string|max:50',
             'status' => 'required|boolean',
@@ -83,6 +99,8 @@ class SalaryController extends Controller
      */
     public function destroy(Salary $salary)
     {
+
+        $salary = Salary::findOrFail($salary->id);
         $salary->delete();
         return back()->with('success', 'Salary deleted successfully!');
     }

@@ -31,7 +31,7 @@
                             <div class="card-body p-4">
                                 <div class="card-header border-bottom d-flex justify-content-between">
                                     <h3 class="card-title">All Advance Salary Info</h3>
-                                    <a href="{{route('salary.create')}}" class="btn btn-primary">Add Employee Advance Salary</a>
+                                    <a href="{{route('advance.salary.create')}}" class="btn btn-primary">Add Employee Advance Salary</a>
                                 </div>
                             </div>
                         </div>
@@ -85,10 +85,10 @@
                                                 <h6 class="mb-0 fs-14 fw-semibold">{{$salary->amount}}</h6>
                                             </td>
                                             <td>
-                                                <h6 class="mb-0 fs-14 fw-semibold">{{$salary->payment_date}}</h6>
+                                                <h6 class="mb-0 fs-14 fw-semibold">{{$salary->month}}</h6>
                                             </td>
                                             <td>
-                                                <h6 class="mb-0 fs-14 fw-semibold">{{$salary->payment_methode}}</h6>
+                                                <h6 class="mb-0 fs-14 fw-semibold">{{$salary->payment_date}}</h6>
                                             </td>
                                             <td>
                                                 @if($salary->status)
@@ -99,10 +99,10 @@
                                             </td>
                                             <td>
                                                 <div class="d-flex align-items-stretch">
-                                                    <a class="btn btn-sm btn-outline-success border me-2" href="{{route('salary.edit',$salary->id)}}" data-bs-toggle="tooltip" data-bs-original-title="Edit">
+                                                    <a class="btn btn-sm btn-outline-success border me-2" href="{{route('advance.salary.edit',$salary->id)}}" data-bs-toggle="tooltip" data-bs-original-title="Edit">
                                                         <i class="fe fe-edit-2"></i>
                                                     </a>
-                                                    <form action="{{route('salary.destroy',$salary->id)}}" method="POST">
+                                                    <form action="{{route('advance.salary.destroy',$salary->id)}}" method="POST">
                                                         @csrf
                                                         <button type="submit" class="btn btn-sm btn-outline-secondary border me-2" data-bs-toggle="tooltip" data-bs-original-title="Delete" onclick="return confirm('Are You Sure ..')">
                                                             <i class="fe fe-trash-2"></i>

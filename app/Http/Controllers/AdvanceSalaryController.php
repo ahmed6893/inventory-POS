@@ -36,7 +36,6 @@ class AdvanceSalaryController extends Controller
             'amount' => 'required|numeric|min:0',
             'month' => 'required|string|max:7',
             'payment_date' => 'required|date',
-            'payment_method' => 'required|string|max:50',
             'status' => 'required|string|max:20',
             'notes' => 'nullable|string|max:255',
         ]);

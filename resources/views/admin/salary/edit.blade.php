@@ -67,6 +67,10 @@
                                                     <label class="form-label fw-semibold text-dark">Amount</label>
                                                     <input type="number" name="amount" class="form-control" placeholder="Salary Amount" required value="{{ $salary->amount }}">
                                                 </div>
+                                                <div class="col-md-6">
+                                                    <label class="form-label fw-semibold text-dark">Month</label>
+                                                    <input type="month" name="month" class="form-control" placeholder="Month" required value="{{ $salary->month }}">
+                                                </div>
                                             </div>
 
                                             <div class="row mb-3">

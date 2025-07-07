@@ -6,6 +6,7 @@ use App\Http\Controllers\EmployeeController;
 use App\Http\Controllers\CustomerController;
 use App\Http\Controllers\SuppliersController;
 use App\Http\Controllers\SalaryController;
+use App\Http\Controllers\AdvanceSalaryController;
 
 
 
@@ -44,6 +45,13 @@ Route::middleware('auth')->group(function () {
     Route::get('/salary/edit/{id}',   [SalaryController::class, 'edit'])   ->name('salary.edit');
     Route::post('/salary/update/{id}',[SalaryController::class, 'update']) ->name('salary.update');
     Route::post('/salary/delete/{id}',[SalaryController::class, 'destroy'])->name('salary.destroy');
+
+    Route::get('/advanceSalary',             [AdvanceSalaryController::class, 'index'])  ->name('advance.salary.index');
+    Route::post('/advanceSalary/store',      [AdvanceSalaryController::class, 'store'])  ->name('advance.salary.store');
+    Route::get('/create-advanceSalary',      [AdvanceSalaryController::class, 'create']) ->name('advance.salary.create');
+    Route::get('/advanceSalary/edit/{id}',   [AdvanceSalaryController::class, 'edit'])   ->name('advance.salary.edit');
+    Route::post('/advanceSalary/update/{id}',[AdvanceSalaryController::class, 'update']) ->name('advance.salary.update');
+    Route::post('/advanceSalary/delete/{id}',[AdvanceSalaryController::class, 'destroy'])->name('advance.salary.destroy');
 });
 
 require __DIR__.'/auth.php';
