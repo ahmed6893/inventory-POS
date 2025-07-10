@@ -11,13 +11,13 @@
                 <!-- PAGE-HEADER -->
                 <div class="page-header">
                     <div>
-                        <h1 class="page-title">Create Advance Salary For Employer</h1>
+                        <h1 class="page-title">Create Category</h1>
                     </div>
                     <div class="ms-auto pageheader-btn">
                         <ol class="breadcrumb">
                             <li class="breadcrumb-item">Apps</li>
-                            <li class="breadcrumb-item"><a href="javascript:void(0);">Salary</a></li>
-                            <li class="breadcrumb-item active" aria-current="page">Create Advance Salary</li>
+                            <li class="breadcrumb-item"><a href="javascript:void(0);">Category</a></li>
+                            <li class="breadcrumb-item active" aria-current="page">Create Category</li>
                         </ol>
                     </div>
                 </div>
@@ -45,52 +45,27 @@
                             <div class="card-body p-5 create-project-main">
 
                                 <div class="d-flex align-items-center justify-content-between mb-4">
-                                    <h4 class="m-0">All Employer Advance Salary</h4>
-                                    <a href="{{ route('advance.salary.index') }}" class="btn btn-sm btn-outline-secondary">
+                                    <h4 class="m-0">All Category</h4>
+                                    <a href="{{ route('category.index') }}" class="btn btn-sm btn-outline-secondary">
                                          Back to List
                                     </a>
                                 </div>
-                                <form action="{{ route('advance.salary.store') }}" method="POST">
+                                <form action="{{ route('category.store') }}" method="POST">
                                     @csrf
 
                                     <div class="row mb-3">
                                         <div class="col-md-6">
-                                            <label class="form-label fw-semibold text-dark">Select Employee</label>
-                                            <select name="employee_id" class="form-control" required>
-                                                <option value="">-- Select Employee --</option>
-                                                @foreach($employees as $employee)
-                                                    <option value="{{ $employee->id }}">{{ $employee->name }} ({{ $employee->phone }})</option>
-                                                @endforeach
-                                            </select>
-                                        </div>
-                                        <div class="col-md-6">
-                                            <label class="form-label fw-semibold text-dark">Amount</label>
-                                            <input type="number" name="amount" class="form-control" placeholder="Salary Amount" required>
-                                        </div>
-                                        <div class="col-md-6">
-                                            <label class="form-label fw-semibold text-dark">Month</label>
-                                            <input type="number" name="month" class="form-control" placeholder="Month" required>
+                                            <label class="form-label fw-semibold text-dark">Category Name</label>
+                                            <input type="text" name="name" class="form-control" placeholder="Category Name" required>
                                         </div>
                                     </div>
-
-                                    <div class="row mb-3">
-                                        <div class="col-md-6">
-                                            <label class="form-label fw-semibold text-dark">Payment Date</label>
-                                            <input type="date" name="payment_date" class="form-control" required>
-                                        </div>
-                                    </div>
-
                                     <div class="row mb-3">
                                         <div class="col-md-6">
                                             <label class="form-label fw-semibold text-dark">Status</label>
                                             <select name="status" class="form-control" required>
-                                                <option value="1">Paid</option>
-                                                <option value="0">Pending</option>
+                                                <option value="1">Active</option>
+                                                <option value="0">Inactive</option>
                                             </select>
-                                        </div>
-                                        <div class="col-md-6">
-                                            <label class="form-label fw-semibold text-dark">Notes</label>
-                                            <input type="text" name="notes" class="form-control" placeholder="Optional">
                                         </div>
                                     </div>
 
